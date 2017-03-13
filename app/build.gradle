@@ -46,23 +46,23 @@ dependencies {
     compile 'com.jakewharton.rxbinding:rxbinding:1.0.0'
 
     /* MVP */
-    compile 'com.arello-mobile:moxy:1.4.5'
-    compile 'com.arello-mobile:moxy-android:1.4.5'
-    compile 'com.arello-mobile:moxy-app-compat:1.4.5'
-    provided 'com.arello-mobile:moxy-compiler:1.4.5'
+    compile 'com.arello-mobile:moxy:1.4.6'
+    compile 'com.arello-mobile:moxy-android:1.4.6'
+    compile 'com.arello-mobile:moxy-app-compat:1.4.6'
+    provided 'com.arello-mobile:moxy-compiler:1.4.6'
 
     /* Network */
-    compile 'com.facebook.fresco:fresco:1.0.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-jackson:2.1.0'
+    compile 'com.facebook.fresco:fresco:1.1.0'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-jackson:2.2.0'
 
     /* UI */
     compile 'com.github.stfalcon:frescoimageviewer:0.4.1'
 
     /* Utils */
-    compile 'com.akexorcist:localizationactivity:1.1.1'
-    compile 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.akexorcist:localizationactivity:1.1.2'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'com.pixplicity.easyprefs:library:1.8.1@aar'
     compile (
             [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.4.1'],

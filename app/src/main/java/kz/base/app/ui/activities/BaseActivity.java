@@ -27,7 +27,7 @@ public abstract class BaseActivity extends MvpAppCompatActivity implements OnLoc
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        localizationDelegate.addOnLocaleChengedListener(this);
+        localizationDelegate.addOnLocaleChangedListener(this);
         localizationDelegate.onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
         mViewDataBinding = DataBindingUtil.setContentView(this, getLayoutId());
