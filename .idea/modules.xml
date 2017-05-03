@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android.base.kz.iml" filepath="$PROJECT_DIR$/android.base.kz.iml" />
       <module fileurl="file://$PROJECT_DIR$/android.template.iml" filepath="$PROJECT_DIR$/android.template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android.template.iml" filepath="$PROJECT_DIR$/android.template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

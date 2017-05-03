@@ -1,9 +1,7 @@
 package kz.base.app.mvp.app;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.ContextWrapper;
-import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.pixplicity.easyprefs.library.Prefs;
@@ -111,11 +109,5 @@ public class MyApp extends Application {
 
     public RestInterface getApi() {
         return mApi;
-    }
-
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(this);
     }
 }
