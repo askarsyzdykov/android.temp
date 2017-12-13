@@ -1,16 +1,17 @@
 package kz.base.app.ui.activities;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.akexorcist.localizationactivity.LocalizationDelegate;
-import com.akexorcist.localizationactivity.OnLocaleChangedListener;
+import com.akexorcist.localizationactivity.core.LocalizationActivityDelegate;
+import com.akexorcist.localizationactivity.core.OnLocaleChangedListener;
 import com.arellomobile.mvp.MvpAppCompatActivity;
 
 import java.util.Locale;
@@ -23,7 +24,7 @@ public abstract class BaseActivity extends MvpAppCompatActivity implements OnLoc
     private Toast mToast;
     protected ViewDataBinding mViewDataBinding;
 
-    private LocalizationDelegate localizationDelegate = new LocalizationDelegate(this);
+    private LocalizationActivityDelegate localizationDelegate = new LocalizationActivityDelegate(this);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public abstract class BaseActivity extends MvpAppCompatActivity implements OnLoc
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar == null) {
-            setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+            setSupportActionBar(findViewById(R.id.toolbar));
             actionBar = getSupportActionBar();
         }
         if (actionBar != null) {
@@ -46,15 +47,30 @@ public abstract class BaseActivity extends MvpAppCompatActivity implements OnLoc
     @Override
     public void onResume() {
         super.onResume();
-        localizationDelegate.onResume();
+        localizationDelegate.onResume(this);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(localizationDelegate.attachBaseContext(newBase));
+    }
+
+    @Override
+    public Context getApplicationContext() {
+        return localizationDelegate.getApplicationContext(super.getApplicationContext());
+    }
+
+    @Override
+    public Resources getResources() {
+        return localizationDelegate.getResources(super.getResources());
     }
 
     public final void setLanguage(String language) {
-        localizationDelegate.setLanguage(language);
+        localizationDelegate.setLanguage(this, language);
     }
 
     public final void setLanguage(Locale locale) {
-        localizationDelegate.setLanguage(locale);
+        localizationDelegate.setLanguage(this, locale);
     }
 
     public final void setDefaultLanguage(String language) {
@@ -65,12 +81,8 @@ public abstract class BaseActivity extends MvpAppCompatActivity implements OnLoc
         localizationDelegate.setDefaultLanguage(locale);
     }
 
-    public final String getLanguage() {
-        return localizationDelegate.getLanguage();
-    }
-
-    public final Locale getLocale() {
-        return localizationDelegate.getLocale();
+    public final Locale getCurrentLanguage() {
+        return localizationDelegate.getLanguage(this);
     }
 
     // Just override method locale change event
