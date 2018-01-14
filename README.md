@@ -28,11 +28,6 @@ Push code to your repository:
 $ git push origin master
 ```
 
-### Todos
-
- - Write Tests
- - Add Night Mode
-
 License
 ----
 
