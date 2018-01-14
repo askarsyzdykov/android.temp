@@ -7,7 +7,7 @@ Template uses a number of open source projects to work properly:
 * [Moxy] - MVP framework for Android
 * [Fresco] - a powerful system for displaying images in Android applications.
 * [Retrofit2] - A type-safe HTTP client for Android and Java.
-* [butterknife] - view injection
+* [Butter Knife] - Bind Android views and callbacks to fields and methods.
 * [EasyPrefs] - small library containing a wrapper/helper for the Shared Preferences of android.
 * [RxJava/RxAndroid] - RxJava bindings for Android
 
